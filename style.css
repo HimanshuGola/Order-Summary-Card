@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&display=swap');
+:root{
+    --ff-main: 'Red Hat Display', sans-serif;
+
+    --fw-regular: 500;
+    --fw-bolder: 700;
+    --fw-bold: 900;
+
+    --clr-primary-paleblue: hsl(225, 100%, 94%);
+    --clr-primary-brightblue: hsl(245, 75%, 52%);
+
+    --clr-neutral-700: hsl(223, 47%, 23%);
+    --clr-neutral-300: hsl(224, 23%, 55%);
+    --clr-neutral-100: hsl(225, 100%, 98%);
+
+}
+
+
+/* Reset */
+
+*, *::before, *::after {
+box-sizing: border-box;
+}
+* {
+margin: 0;
+}
+html, body {
+min-height: 100vh;
+}
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+input, button, textarea, select {
+font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+#root, #__next {
+isolation: isolate;
+}
+
+/* Utility Classes */
+
+.flex-group{
+    --flex-direction: column;
+    --flex-jc-center: center;
+    --flex-ai-center: center;
+    --gap: 1rem;
+
+    display: flex;
+    flex-direction: var(--flex-direction);
+    justify-content: var(--flex-jc-center);
+    align-items: var(--flex-ai-center);
+    gap: var(--gap);
+}
+
+/* Main CSS */
+
+body{
+    background-image: url("images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: var(--clr-primary-paleblue);
+
+    font-family: var(--ff-main);
+}
+
+.order-summary-card{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+
+    width: 90%;
+    max-width: 350px;
+    margin-block: 1.5rem;
+
+    background-color: white;
+    box-shadow: 0 15px 15px 4px hsl(224, 23%, 55%, 15%);
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+
+.illustration-hero{
+    width: 100%;
+}
+
+.illustration-hero img{
+    width: 100%;
+}
+.card-content{
+    --flex-jc-center: none;
+    --flex-ai-center: none;
+    --gap: 1.5rem;
+    padding-inline: 1.5rem;
+    padding-block-start: 1.65rem;
+    padding-block-end: 1.75rem;
+    margin-block-start: -1rem;
+}
+
+.card-message{
+    --flex-jc-center: center;
+    --flex-ai-center: center;
+}
+
+h1{
+    font-size: 1.35rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-700);
+}
+
+p{
+    font-size: 0.95rem;
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-300);
+    text-align: center;
+}
+
+.plan-details{
+    --flex-direction: row;
+    --gap: 1.15rem;
+    background-color: var(--clr-neutral-100);
+    padding: 0.875rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.music-icon{
+    width: 20%;
+    max-height: 48px;
+    max-width: 48px;
+}
+
+.plan{
+    --flex-ai-center: none;
+    --gap: 0.1rem;
+    margin-right: auto;
+}
+
+.plan-name{
+    font-size: 0.875rem;
+}
+
+.plan-price{
+    font-size: 0.85rem;
+    font-weight: var(--fw-regular);
+    text-align: start;
+}
+
+.plan-change{
+    text-decoration: underline;
+    font-size: 0.8rem;
+    font-weight: var(--fw-bolder);
+    color: var(--clr-primary-brightblue);
+    transition: all 0.3s ease; 
+}
+
+.plan-change:hover{
+    color: hsl(245, 75%, 52%, 75%);
+}
+
+.proceed-btn{
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.65rem;
+
+    background-color: var(--clr-primary-brightblue);
+    box-shadow: 0 18px 18px 1px hsl(224, 23%, 55%, 25%);
+    color: white;
+
+    font-size: 0.85rem;
+    font-weight: var(--fw-bolder);
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.proceed-btn:hover{
+    background-color: hsl(245, 75%, 52%, 75%);
+}
+
+.cancel-btn{
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: var(--fw-bolder);
+    color: var(--clr-neutral-300);
+    transition: all 0.3s ease;  
+}
+
+.cancel-btn:hover{
+    color: var(--clr-neutral-700);
+}
+
+
+@media(min-width: 400px){
+    body{
+        background-image: url("images/pattern-background-desktop.svg");
+    }
+
+    .card-content{
+        padding-block: 2rem;
+    }
+
+    .card-message{   
+        --gap: 0.8rem;      
+        width: 85%;
+        margin: auto;
+    }
+}
